@@ -36,13 +36,29 @@
                         </button>
                     </form>
 
+                    @if (Route::has('login'))
+
+                    @auth
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="login">Login</a>
+                        {{-- <x-app-layout>
+
+                        </x-app-layout> --}}
+                    </li>
+
+                    @else
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}" id="login">Login</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="register">Register</a>
+                        <a class="nav-link" href="{{ route('register') }}" id="register">Register</a>
                     </li>
+
+                    @endauth   
+                
+                    @endif
                 </ul>
             </div>
         </nav>
